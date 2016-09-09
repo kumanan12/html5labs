@@ -2,8 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1"> 
+      <style>
+
+h1   {color: blue;}
+
+</style>
+    <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Fredericka+the+Great|Allura|Amatic+SC|Arizonia|Averia+Sans+Libre|Cabin+Sketch|Francois+One|Jacques+Francois+Shadow|Josefin+Slab|Kaushan+Script|Love+Ya+Like+A+Sister|Merriweather|Offside|Open+Sans|Open+Sans+Condensed|Oswald|Over+the+Rainbow|Pacifico|Romanesco|Sacramento|Seaweed+Script|Special+Elite">
+     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway">
+     <link rel="stylesheet" type="text/css" href="site.css?v="> -->
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <title>Become a member</title>
 </head>
@@ -12,21 +22,30 @@
     <div class="wsb-canvas-scrollable" style="background-color: #ffffff; background-position-x: center; background-position-y: center; background-position: center center; background-repeat: no-repeat; position: absolute; width: 100%; height: 100%;"></div>
 <form class="form-horizontal">
   <div class="form-group">
-    <label class="control-label col-sm-2" for="email">Email:</label>
+    <div data-label-container-groupid="13-desktop" class="form-label-adjacent" style= "width: 140px;"></div>
+    <label class="control-label col-sm-2" for="fname">First Name: </label>
     <div class="col-sm-10">
-      <input type="email" class="form-control" id="email" placeholder="Enter email">
+<div data-field-container-groupid="13-desktop" class="form-field-adjacent"  style= "width: 653px;"></div>
+      <input type="text" class="form-control"  id="enterfname" placeholder="Enter First name">
     </div>
   </div>
   <div class="form-group">
-    <label class="control-label col-sm-2" for="pwd">Password:</label>
+    <label class="control-label col-sm-2" for="lastname">Last Name:</label>
     <div class="col-sm-10"> 
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+      <input type="text" class="form-control" id="enterlname" placeholder="Enter Last name here">
+    </div>
+  </div>
+
+<div class="form-group">
+    <label class="control-label col-sm-2" for="email">Email:</label>
+    <div class="col-sm-10"> 
+      <input type="text" class="form-control" id="enteremail" placeholder="Enter email address">
     </div>
   </div>
   <div class="form-group"> 
     <div class="col-sm-offset-2 col-sm-10">
       <div class="checkbox">
-        <label><input type="checkbox"> Remember me</label>
+        <label><input type="checkbox"> Check here to receive email updates</label>
       </div>
     </div>
   </div>
@@ -35,6 +54,8 @@
       <button type="submit" class="btn btn-default">Submit</button>
     </div>
   </div>
+ 
+
 </form>
 </body>
 </html>
