@@ -43,170 +43,131 @@
 
 <body>
   <div class="container">
-    <div class="header">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-2">
-            <img src="images/logo.png" alt="">
-          </div>
-          <div class="col-md-7">
-            <h1 class="h2">கேரொலைனா தமிழ்ச் சங்கம்</h1>
-            <div class="h2">Tamil Sangam Of North Carolina</div>
-          </div>
-          <div class="col-md-2">
-            <img src="images/right.jpg" alt="">
-          </div>
-        </div>
-
-        <!-- /.navbar-collapse -->
-
-      </div>
-    </div>
-    <nav class="navbar navbar-default">
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Events</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Membership <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Renew Membership</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="become-a-member.html">Become a Member</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Donate</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Tamil Manam</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Projects</a></li>
-
-        </ul>
-
-
-      </div>
-    </nav>
-      <form class="form-horizontal">
-    <div class="form-group">
-      <div data-label-container-groupid="13-desktop" class="form-label-adjacent" style="width: 140px;"></div>
-      <label class="control-label col-sm-2" for="fname">First Name: </label>
-      <div class="col-sm-10">
-        <div data-field-container-groupid="13-desktop" class="form-field-adjacent" style="width: 653px;"></div>
-        <input type="text" class="form-control" id="enterfname" style="width: 900px; background-color:#E9FFFF" placeholder="Enter First name">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="lastname">Last Name:</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="enterlname" style=" width: 900px; background-color:#F3FFFF" placeholder="Enter Last name here">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="email">Email:</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="enteremail" style="width: 900px; background-color:#F3FFFF" placeholder="Enter Email address">
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <div class="checkbox">
-          <label><input type="checkbox"> Check here to receive email updates</label>
+    <div id="header"></div>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <div data-label-container-groupid="13-desktop" class="form-label-adjacent" style="width: 140px;"></div>
+        <label class="control-label col-sm-2" for="fname">First Name: </label>
+        <div class="col-sm-10">
+          <div data-field-container-groupid="13-desktop" class="form-field-adjacent" style="width: 653px;"></div>
+          <input type="text" class="form-control" id="enterfname" style="width: 900px; background-color:#E9FFFF" placeholder="Enter First name">
         </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="address">Address:</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="enteraddress" style="width: 900px; background-color:#F3FFFF" placeholder="Enter Street address">
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="lastname">Last Name:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="enterlname" style=" width: 900px; background-color:#F3FFFF" placeholder="Enter Last name here">
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="city">City/State/Zip:</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="entercity" style="width: 900px; background-color:#F3FFFF" placeholder="Enter City here">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="city">Phone:</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="entercity" style="width: 900px; background-color:#F3FFFF" placeholder="Enter Phone number">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="choose">Choose:</label>
-      <div class=" col-sm-10">
 
-        <select id="Choose" name="Choose" data-label="Choose" style="width: 900px; background-color:#F3FFFF" resize: horizontal;
-          class="form-value" data-content="">
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Email:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="enteremail" style="width: 900px; background-color:#F3FFFF" placeholder="Enter Email address">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label><input type="checkbox"> Check here to receive email updates</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="address">Address:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="enteraddress" style="width: 900px; background-color:#F3FFFF" placeholder="Enter Street address">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="city">City/State/Zip:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="entercity" style="width: 900px; background-color:#F3FFFF" placeholder="Enter City here">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="city">Phone:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="entercity" style="width: 900px; background-color:#F3FFFF" placeholder="Enter Phone number">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="choose">Choose:</label>
+        <div class=" col-sm-10">
+
+          <select id="Choose" name="Choose" data-label="Choose" style="width: 900px; background-color:#F3FFFF" resize: horizontal;
+            class="form-value" data-content="">
     <option value="Individual" selected>Individual</option>
     <option value="Family">Family</option>
     <option value="Student" >Student</option>
     </select>
 
+        </div>
+
       </div>
 
-    </div>
-
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="comments">Comments:</label>
-      <div class=" col-sm-10">
-        <textarea rows="4" cols="50" name="comment" resize: vertical; style="width: 900px; background-color:#F3FFFF" form="usrform">
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="comments">Comments:</label>
+        <div class=" col-sm-10">
+          <textarea rows="4" cols="50" name="comment" resize: vertical; style="width: 900px; background-color:#F3FFFF" form="usrform">
 Enter comments or questions</textarea>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <div data-label-container-groupid="13-desktop" class="form-label-adjacent" style="width: 140px;"></div>
-      <label class="control-label col-sm-2" for="fname">First Name: </label>
-      <div class="col-sm-10">
-        <div data-field-container-groupid="13-desktop" class="form-field-adjacent" style="width: 653px;"></div>
-        <input type="text" class="form-control" id="enterfname" style="width: 900px; background-color:#E9FFFF" placeholder="Enter text here">
+      <div class="form-group">
+        <div data-label-container-groupid="13-desktop" class="form-label-adjacent" style="width: 140px;"></div>
+        <label class="control-label col-sm-2" for="fname">First Name: </label>
+        <div class="col-sm-10">
+          <div data-field-container-groupid="13-desktop" class="form-field-adjacent" style="width: 653px;"></div>
+          <input type="text" class="form-control" id="enterfname" style="width: 900px; background-color:#E9FFFF" placeholder="Enter text here">
+        </div>
       </div>
-    </div>
 
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" style="background-color:#6792A0
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" style="background-color:#6792A0
        border: none;
     color: white;
     text-align: center;
     text-decoration: none;" class="btn btn-default">Submit</button>
-      </div>
+        </div>
 
 
-      <div class="col-sm-offset-2 col-sm-10">
-        <table style="width: 370px;background-color:#ADD8E6">
-          <tr>
-            <td><input type="hidden" name="on0" value="Membership Type">Membership Type</td>
-          </tr>
-          <tr>
-            <td><select name="os0">
+        <div class="col-sm-offset-2 col-sm-10">
+          <table style="width: 370px;background-color:#ADD8E6">
+            <tr>
+              <td><input type="hidden" name="on0" value="Membership Type">Membership Type</td>
+            </tr>
+            <tr>
+              <td><select name="os0">
 	<option value="Family Membership">Family Membership $60.00 USD
 	<option value="Individual Membership">Individual Membership $30.00 USD
 	<option value="College Student">College Student $15.00 USD
 </select> </td>
-          </tr>
-          <tr>
-            <td><input type="hidden" name="on1" value="Your email">Your email</td>
-          </tr>
-          <tr>
-            <td><input type="text" name="os1" maxlength="200"></td>
-          </tr>
-          <tr>
-            <td><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit"
-                alt="PayPal - The safer, easier way to pay online!"></td>
-          </tr>
-          <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </tr>
+            <tr>
+              <td><input type="hidden" name="on1" value="Your email">Your email</td>
+            </tr>
+            <tr>
+              <td><input type="text" name="os1" maxlength="200"></td>
+            </tr>
+            <tr>
+              <td><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit"
+                  alt="PayPal - The safer, easier way to pay online!"></td>
+            </tr>
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 
-        </table>
+          </table>
+        </div>
       </div>
-    </div>
 
-  </form>
+    </form>
 
-  </div><!--end of container -->
+  </div>
+  <!--end of container -->
   <div class="wsb-canvas-scrollable" style="background-color: #ffffff; background-position-x: center; background-position-y: center; background-position: center center; background-repeat: no-repeat; position: absolute; width: 100%; height: 100%;"></div>
-
+  <script>
+        $("#header").load("https://raw.githubusercontent.com/kumanan12/html5labs/master/tamil-sangam/_header.html");
+    </script>
 </body>
 
 </html>

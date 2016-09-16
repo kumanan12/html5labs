@@ -14,6 +14,7 @@
 
 <body>
     <div class="container">
+        <div id="header"></div>
         <h2>Past Events</h2>
         <table class="table table-bordered table-hover">
             <thead>
@@ -116,16 +117,18 @@
                 body {
                     background-color: peachpuff;
                 }
-                tbody{
+                
+                tbody {
                     background-color: white;
-                    }
-                   
+                }
             </style>
         </table>
 
 
     </div>
-
+    <script>
+        $("#header").load("https://raw.githubusercontent.com/kumanan12/html5labs/master/tamil-sangam/_header.html");
+    </script>
 </body>
 
 </html>
