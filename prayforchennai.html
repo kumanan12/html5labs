@@ -11,11 +11,39 @@
       margin-right: 20%;
       padding: 10px 10px 10px 10px;
     }
+     ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        
+        li {
+            float: left;
+        }
+        
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+        a:hover:not(.active) {
+            background-color: grey;
+        }
+        
+        .active {
+            background-color: #070FC4;
+        }
   </style>
 </head>
 
 <body>
   <ul>
+    <img src="./images/logo.jpg" ; style="width:200px;height:200px">
         <li><a href="upcoming-events.html">Upcoming Events</a></li>
         <li><a href="donate.html">Donate</a></li>
         <li><a href="tamil-youth.html">Tamil Youth Committee</a></li>
