@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Html Forms</title>
+    <script>
+        function submitForm() {
+            let firstName = get("#firstName") ;
+            let lastName = get("#lastName");
+            let email = get("#email");
+            try {
+                console.log(`First Name: ${firstName.value ===""}`);
+            } catch (error) {
+                console.error(error);
+            }
+            console.log(`First Name: ${firstName?.value} | Lat Name: ${lastName?.value} | Email: ${email?.value} `);
+
+            // document.getElementById("myForm").submit();
+        }
+
+        function get(id) {
+            const pattern = id.toString().substring(0, 1);
+            const query = id.toString().substring(1);
+            console.log(`pattern ${pattern}`);
+            switch (pattern) {
+                case "#":
+                    return document.getElementById(query);
+                    break;
+                case ".":
+                    return document.getElementsByClassName(query);
+                    break
+                default:
+                    return document.getElementsByTagName(id);
+                    break;
+            }
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Html Forms</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form action="/users" method="POST">
+
+                    <div class="form-group">
+                        <label for="firstName">First name</label>
+                        <input class="form-control" id="firstName" name="firstName">
+                    </div>
+                    <div class="form-group>
+                        <label class=" form-check-label" for="lastName">Last name</label>
+                        <input class="form-control" id="lastName" name="lastName">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="submitForm()">Submit</button>
+                </form>
+            </div>
+            <div class="col-md-6"></div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
