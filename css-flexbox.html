@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Flexbox</title>
+    <style>
+        header {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+
+        nav a {
+            color: #fff;
+            display: inline-block;
+            margin-left: 1rem;
+            text-decoration: none;
+        }
+
+        nav a#hamburger {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            header {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin-top: 1rem;
+                text-align: center;
+                width: 100%;
+            }
+
+            nav a#hamburger {
+                display: block;
+                margin-top: 1rem;
+                text-align: right;
+            }
+
+            nav a:not(#hamburger) {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#" id="hamburger">&#9776;</a>
+        </nav>
+    </header>
+
+
+
+</body>
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const links = document.querySelectorAll('nav a:not(#hamburger)');
+
+    hamburger.addEventListener('click', () => {
+        for (let i = 0; i < links.length; i++) {
+            if (links[i].style.display === 'block') {
+                links[i].style.display = 'none';
+            } else {
+                links[i].style.display = 'block';
+            }
+        }
+    });
+
+    for (let i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', () => {
+            for (let i = 0; i < links.length; i++) {
+                links[i].style.display = 'none';
+            }
+        });
+    }
+
+</script>
+
+</html>

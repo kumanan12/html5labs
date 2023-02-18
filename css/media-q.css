@@ -1,0 +1,16 @@
+@media screen and (max-width: 800px) {
+    div{
+        background-color: red;
+    }
+}
+@media screen and (max-width: 390px) {
+    .row{
+        display: block;
+        
+    }
+    div{
+        background-color: brown;
+        margin: 10px ;
+        width: 90%;
+    }
+}

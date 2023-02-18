@@ -2,59 +2,34 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="TACE16">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Html Forms</title>
-    <script>
-        function submitForm() {
-            let firstName = get("#firstName") ;
-            let lastName = get("#lastName");
-            let email = get("#email");
-            try {
-                console.log(`First Name: ${firstName.value ===""}`);
-            } catch (error) {
-                console.error(error);
-            }
-            console.log(`First Name: ${firstName?.value} | Lat Name: ${lastName?.value} | Email: ${email?.value} `);
-
-            // document.getElementById("myForm").submit();
-        }
-
-        function get(id) {
-            const pattern = id.toString().substring(0, 1);
-            const query = id.toString().substring(1);
-            console.log(`pattern ${pattern}`);
-            switch (pattern) {
-                case "#":
-                    return document.getElementById(query);
-                    break;
-                case ".":
-                    return document.getElementsByClassName(query);
-                    break
-                default:
-                    return document.getElementsByTagName(id);
-                    break;
-            }
-        }
-
-
-    </script>
+<style>
+    .box{
+        width: 300px;
+        height: 300px;
+        background-color: aliceblue;
+    }
+</style>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
             <h1>Html Forms</h1>
+            <h6>Trademark &#127936;</h6>
         </div>
+
         <div class="row">
             <div class="col-md-6">
                 <form action="/users" method="POST">
 
                     <div class="form-group">
                         <label for="firstName">First name</label>
-                        <input class="form-control" id="firstName" name="firstName">
+                        <input id="firstName" name="firstName">
                     </div>
                     <div class="form-group>
                         <label class=" form-check-label" for="lastName">Last name</label>
@@ -70,7 +45,21 @@
                     <button type="button" class="btn btn-primary" onclick="submitForm()">Submit</button>
                 </form>
             </div>
-            <div class="col-md-6"></div>
+            <div class="col-md-6">
+                <img src="img/small-bb.jpg">
+
+            </div>
+            <div class="col-md-6">
+                <!-- <img width="300px" height="300px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Pichavaram_1.jpg/2560px-Pichavaram_1.jpg"
+                    alt="pichavaram"> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                  <div class="box">Box 1</div>
+            <div class="col-6">
+              <div class="box">Box 2</div>
+            </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
