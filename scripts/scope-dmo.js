@@ -1,44 +1,20 @@
-var publicName = 'Anyone can see me';
-let name = 'Veeshwa';
-let student = {
-    name: 'Dhivakar',
-    age: 22,
-    someName: name
-}
+// global variable - do not use.
+let publicName = 'Anyone can see me';
 
-
-
-function hello(params) {
-    let person = 'Kumanan'
-    console.log('Inside function',name);
-    if(params === 'world') {
-        var secretName = 'Superman';
-        console.log('inside block ',secretName);
-
+function greeting(name) {
+    console.log(publicName);
+    if (name === 'kumanan') {
+        // block level scope
+        let specialGreeting = 'Mr.'   
     }
-    console.log(secretName);
+    // function level scope
+    let welcome = ' Hello ';
+    console.log(welcome);
+    return specialGreeting + welcome + name; 
 
 }
 
-// function hello(params) {
-//     let person = 'Kumanan';
-//     var secretName;
-//     console.log('Inside function',name);
-//     if(params === 'world') {
-//          secretName = 'Superman';
-//         console.log('inside block ',secretName);
 
-//     }
-//     console.log(secretName);
-
-// }
-
-hello('world');
-
-// console.log(person);
-
-
-
-// hello();
-// console.log(name, student);
-
+//  console.log('greeeting ' + welcome);
+const result = greeting('kumanan');
+console.log(result);

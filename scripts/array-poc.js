@@ -15,10 +15,15 @@
 // const isGreaterThanTen = element => element > 10;
 // const found = array1.filter(isGreaterThanTen);
 // console.log(found);
-const array1 = [5, 12, 8, 130, 44];
+const marks = [75, 82, 78, 91, 84];
+
+const len = marks.length;
+// access elements in an array;
+const firstElement = marks[0];
+
 
 const initialValue = 0;
-const sumWithInitial = array1.reduce(
+const sumWithInitial = marks.reduce(
     (accumulator, currentValue) => accumulator + currentValue,
     initialValue
   );
@@ -26,7 +31,7 @@ const sumWithInitial = array1.reduce(
   console.log(sumWithInitial);
 
   let sum = 0;
-  array1.forEach(function(item){
+  marks.forEach(function(item){
     sum = sum+item;
   });
   console.log(sum);
