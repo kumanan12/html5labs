@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch POC</title>
+</head>
+<body>
+    <h1>Ftech POC</h1>
+    <div id="posts"></div>
+    <script>
+        function getPets(){
+            let petContent = '';
+            const fetchPromise = fetch("https://pets-v2.dev-apis.com/pets");
+            fetchPromise.then(response =>{
+               response.json().then(data => {
+                const pets = data.pets;
+                //const pet = data.pets[0];
+                pets.forEach(function(pet){
+                    petContent += ", " +  pet.name;
+                   
+                });
+                console.log(petContent);
+                const element1= document.querySelector("#posts");
+               // element1.innerHTML = `Pet name: ${pet.name}, animal: ${pet.animal}`;
+              //  console.log(data.pets[0]);
+               })
+                // const data = json.pets();
+                // console.log(data);
+            })
+        }
+
+        getPets();
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Posts</h1>
+
+        <div id="posts">
+
+        </div>
+    </div>
+    <script>
+        let content = '';
+        let post = {};
+        // let template= ;
+        function getPosts(){
+            fetch('https://jsonplaceholder.typicode.com/posts')
+            .then((response) => response.json())
+            .then((json) => {
+                json.forEach(post => {
+                    content += `<div class="card m-2" style="width: 30rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${post.title}</h5>
+                                        <hr/>
+                                        <p> ${post.body}</p>
+                                    </div>
+                                </div>`;
+                });
+                document.getElementById('posts').innerHTML = content;
+                console.log(content);
+                // console.log(json)
+            });
+        }
+
+        function displayPets(){
+            fetch('https://pets-v2.dev-apis.com/pets')
+            .then((response) => response.json())
+            .then((data) => {
+                const pets = data.pets;
+                pets.forEach(function(pet){
+                    content += `<div class="card m-3" style="width: 30rem;">
+                                    <img src="${pet.images[0]}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${pet.name}, </h5>
+                                        <h6 class="card-subtitle mb-2 text-body-secondary">${pet.animal}, ${pet.city}</h6>
+                                        <hr/>
+                                        <p class="card-text"> ${pet.description}</p>
+                                    </div>
+                                </div>`;
+                });
+                document.getElementById('posts').innerHTML = content;
+                //console.log(content);
+                // console.log(data.pets);
+                // data.forEach(post => {
+                //     content += `<div class="card m-2" style="width: 30rem;">
+                //                     <div class="card-body">
+                //                         <h5 class="card-title">${post.title}</h5>
+                //                         <hr/>
+                //                         <p> ${post.body}</p>
+                //                     </div>
+                //                 </div>`;
+                // });
+                // document.getElementById('posts').innerHTML = content;
+                // console.log(content);
+                // console.log(json)
+            });
+
+        }
+
+        displayPets();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,5 +1,5 @@
 // global variable - do not use.
-let publicName = 'Anyone can see me';
+var publicName = 'Anyone can see me';
 
 function greeting(name) {
     console.log(publicName);
@@ -15,6 +15,6 @@ function greeting(name) {
 }
 
 
-//  console.log('greeeting ' + welcome);
-const result = greeting('kumanan');
-console.log(result);
+ console.log('current dir ' + __filename);
+// const result = greeting('kumanan');
+// console.log(result);
