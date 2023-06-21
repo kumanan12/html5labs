@@ -1,102 +1,46 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>code-in-js</title>
+    <link rel="stylesheet" href="/css/blog.css">
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bootstrap demo</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  <style>
-    .highlight {
-      background-color: green;
-    }
+  <body>
+    <header>
+      <h1>Code in JavaScript</h1>
+    </header>
+    <main>
+      <article>
+        <h2>Angular v16 is here!</h2>
+        <p>Six months ago, we reached a significant milestone in Angular’s simplicity and developer experience by graduating the standalone APIs from developer preview. Today, we’re thrilled to share that we’re continuing the Angular Momentum with the biggest release since the initial rollout of Angular; making large leaps in reactivity, server-side rendering, and tooling. All this comes with dozens of quality-of-life improvements across feature requests, with over 2,500 combined thumbs up on GitHub!</p>
+      </article>
+      <article>
+        <h2>Write better tests without Router mocks/stubs</h2>
+        <p>Conventional wisdom might suggest that test authors should stub external dependencies like ActivatedRoute or RouterLink and spy on services and service methods like navigateByUrl. A defense for this testing strategy might be
 
-    .highlight:hover {
-      font-style: italic;
-      background-color: yellow;
-    }
-    table {
-      border: 1px solid #000
-    }
+          “Relying on the real router would make them brittle. They could fail for reasons unrelated to the component.”
+          
+          This isn’t entirely true, but for now we will point out one very important detail in this defense that’s often ignored. Per the documentation:
+          
+          “A different battery of tests can explore whether the application navigates as expected in the presence of conditions that influence guards such as whether the user is authenticated and authorized.”
+          
+          It’s important that there still exists a suite of tests that do cover the resulting behavior of executing the real code of the dependency. Unfortunately, this is most often not done. It creates a burden on developers to maintain additional suites of tests when the unit tests being written with mocks could easily cover these behaviors as well. APIs change over time, so writing and maintaining a complete set of mocks and stubs for all the dependencies is often much more difficult and brittle than just using the real ones.</p>
+      </article>
+      <article>
+        <h2>Boilerplate to test with real Router instances</h2>
+        <p>Testing components and services that depend on the Angular Router can be difficult. For example, a component might inject ActivatedRoute and only use it to access the Observable for queryParams. Getting the Router to create a real instance of ActivatedRoute for the test would require quite a bit of boilerplate. For example:
 
-    table:nth-child(1) {
-      
-    }
-
-    table tr:nth-child(even){background-color: lightgrey;}
-    
-    .title{
-      color: lawngreen;
-      font-size: x-large;
-    }
-
-    .title:hover {
-      background-color: black;
-    }
-
-  
-  </style>
- 
-</head>
-
-<body class="container">
-  <div style="display: inline;">Hello </div>  <div style="display: inline;">World</div>
- <span>Hello</span>
- <span>World - This is the span</span>
-
-<h1 class="title">
-  Hello World
-</h1>
-
-  <div class="container">
-    <span class="person"> Veeshwa</span>
-   
-    <table class="ws-table-all" id="customers">
-      <tbody>
-        <tr>
-          <th>Company</th>
-          <th>Contact</th>
-          <th>Country</th>
-        </tr>
-        <tr>
-          <td>Alfreds Futterkiste</td>
-          <td>Maria Anders</td>
-          <td>Germany</td>
-        </tr>
-        <tr>
-          <td>Centro comercial Moctezuma</td>
-          <td>Francisco Chang</td>
-          <td>Mexico</td>
-        </tr>
-        <tr>
-          <td>Ernst Handel</td>
-          <td>Roland Mendel</td>
-          <td>Austria</td>
-        </tr>
-        <tr>
-          <td>Island Trading</td>
-          <td>Helen Bennett</td>
-          <td>UK</td>
-        </tr>
-        <tr>
-          <td>Laughing Bacchus Winecellars</td>
-          <td>Yoshi Tannamuri</td>
-          <td>Canada</td>
-        </tr>
-        <tr>
-          <td>Magazzini Alimentari Riuniti</td>
-          <td>Giovanni Rovelli</td>
-          <td>Italy</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-    crossorigin="anonymous"></script>
- 
-  <script src="scripts/demo.js"></script>
-</body>
-
+          Write a Route for the component under test ( {path: ‘**', component: MyComponent} )
+          Add the Router to TestBed ( TestBed.configureTestingModule)
+          Create a wrapper component with a router-outlet to render the component
+          Create the test ComponentFixture for the wrapper component instead of MyComponent
+          Tell the Router to navigate to the Route with the MyComponent
+          Use the wrapper ComponentFixture to query for MyComponent
+          It’s not until step 6 that you finally have your component you can use to do test assertions. With all of this complicated boilerplate, it makes sense that test authors might want to create a shortcut and share a test stub for ActivatedRoute and override the injectable in TestBed.</p>
+      </article>
+    </main>
+    <footer>
+      <p>Copyright: All Rights reserved</p>
+    </footer>
+  </body>
 </html>
