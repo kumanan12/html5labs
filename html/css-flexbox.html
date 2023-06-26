@@ -6,51 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Css Flexbox</title>
-    <style>
-        header {
-            background-color: #333;
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
-            padding: 1rem;
-        }
-
-        nav a {
-            color: #fff;
-            display: inline-block;
-            margin-left: 1rem;
-            text-decoration: none;
-        }
-
-        nav a#hamburger {
-            display: none;
-        }
-
-        @media screen and (max-width: 600px) {
-            header {
-                flex-direction: column;
-            }
-
-            nav a {
-                margin-top: 1rem;
-                text-align: center;
-                width: 100%;
-            }
-
-            nav a#hamburger {
-                display: block;
-                margin-top: 1rem;
-                text-align: right;
-            }
-
-            nav a:not(#hamburger) {
-                display: none;
-            }
-        }
-    </style>
+   <link rel="stylesheet" href="/css/css-flexbox.css">
 </head>
 
 <body>
+   <div class="container">
     <header>
         <nav>
             <a href="#">Home</a>
@@ -59,7 +19,32 @@
             <a href="#" id="hamburger">&#9776;</a>
         </nav>
     </header>
+    <main>
+        <h1>Welcome to Biriyani Amore</h1>
+        <section class="hero">
+           <div class="hero-text"> Enjoy the taste of Homemade Biriyani</div>
 
+
+
+            
+
+        </section>
+        <section class="features">
+            <div class="box red">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia ad quas officia! Debitis voluptas at maxime sed ex commodi recusandae atque eum ratione vero, eveniet optio, quidem ea minima tenetur!
+            </div>
+            <div class="box green">Box2</div>
+            <div class="box blue">Box3</div>
+        </section>
+        <section></section>
+    </main>
+    <footer>
+        <div class="copyright">
+            Copyright: All rights reserved. 2023
+        </div>
+    </footer>
+
+   </div>
 
 
 </body>
