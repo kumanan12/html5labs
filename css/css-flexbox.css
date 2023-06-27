@@ -16,6 +16,7 @@ header {
     padding: 1rem;
     font-weight: 600;
     font-size: 1.2em;
+    border-radius: 16px;
 }
 
 nav a {
@@ -95,35 +96,45 @@ section {
     font-size: 48px;
 }
 
-
+footer {
+    height: 60px;
+    background-color: #a4ac2f;
+    border-radius: 16px;
+    padding: 20px;
+}
 .copyright {
-    color: gray;
+    color: rgb(18, 17, 17);
     font-style: italic;
 }
 
 
-@media screen and (max-width: 600px) {
-   .copyright{
-    display: none;
-   }
+@media  (max-width: 600px) {
+    
+        header {
+            flex-direction: column;
+            background-color: yellow;
+        }
+    
+        nav a {
+            margin-top: 1rem;
+            text-align: center;
+            width: 100%;
+        }
+    
+        nav a#hamburger {
+            display: block;
+            margin-top: 1rem;
+            text-align: right;
+            margin-right: 30px;
+        }
+    
+        nav a:not(#hamburger) {
+            display: none;
+        }
+ }
+
+ @media (max-width: 800px) {
     header {
-        flex-direction: column;
+        background-color: aquamarine;
     }
-
-    nav a {
-        margin-top: 1rem;
-        text-align: center;
-        width: 100%;
-    }
-
-    nav a#hamburger {
-        display: block;
-        margin-top: 1rem;
-        text-align: right;
-        margin-right: 30px;
-    }
-
-    nav a:not(#hamburger) {
-        display: none;
-    }
-}
+ }
