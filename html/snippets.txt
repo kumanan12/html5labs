@@ -1,12 +1,27 @@
-body{
-    max-width: 1400px;
-    margin: auto;
-    background-color: azure;
-}
-h1 {
-    color: green;
-    font-size: 42px;
-}
+ .content {
+    height: 200vh;
+    /* background-image: url(//unsplash.it/1000/1000); */
+    background-color: #333;
+    background-blend-mode: multiply;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+    margin: 0;
+    padding: 0;
+     
+  }
+1. 
+
+  header {
+    background: var(--background);
+    margin:0;
+    padding: 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index:999
+
+  }
 
 h2{
     color: brown;

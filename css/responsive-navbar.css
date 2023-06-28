@@ -1,0 +1,12 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+:root {
+    --background: rgba(85,214,170, .85)
+}
+
+body {
+    margin: 0;
+    padding:0;
+    font-weight: 400;
+  }
