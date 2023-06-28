@@ -117,3 +117,39 @@ body {
   .nav-toggle{ 
     display: none;
   }
+
+  @media screen and (min-width:800px){
+    .nav-toggle-label {
+        display: none;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 1fr) 1fr;
+    }
+
+    .logo {
+        grid-column: 2/ span 1;
+    }
+
+    nav {
+        all:unset;
+        grid-column: 3/4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+     nav a {
+        opacity: 1;
+     }
+
+     nav ul {
+        display:flex;
+     }
+
+     nav li {
+        margin-left: 3em;
+        margin-bottom: 0;
+     }
+
+  }
