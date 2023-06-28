@@ -1,69 +1,143 @@
-body {
-    margin: 0;
-    padding: 0;
-    background: url('/images/food-bg.jpg') no-repeat;
-    height: 100vh;
+ .content {
+    height: 200vh;
+    /* background-image: url(//unsplash.it/1000/1000); */
+    background-color: #333;
+    background-blend-mode: multiply;
     background-size: cover;
-}
-header {
-    background-color: #a4ac2f;
-    color: #000;
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-    font-weight: 600;
-    font-size: 1.2em;
-}
-
-nav a {
-    display: inline-block;
-    margin-left: 1rem;
-    text-decoration: none;
-}
-
-nav a#hamburger {
-    display: none;
-}
-
-.container {
-    max-width: 1400px;
-    margin:auto;
-}
-
-.copyright {
-    color: gray;
-    font-style: italic;
-}
-
-.hero {
-   
     display: grid;
     place-items: center;
-    
-}
+    margin: 0;
+    padding: 0;
+     
+  }
+1. 
 
-@media screen and (max-width: 600px) {
-   .copyright{
+  header {
+    background: var(--background);
+    margin:0;
+    padding: 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index:999
+
+  }
+
+  2.
+
+  .logo{
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left:0;
+    background: var(--background);
+    width: 100%;
     display: none;
-   }
-    header {
-        flex-direction: column;
-    }
+  }
 
-    nav a {
-        margin-top: 1rem;
-        text-align: center;
-        width: 100%;
-    }
+  nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 
-    nav a#hamburger {
-        display: block;
-        margin-top: 1rem;
-        text-align: right;
-        margin-right: 30px;
-    }
+  nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+  }
 
-    nav a:not(#hamburger) {
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+
+  nav a:hover {
+    color: #000;
+  }
+
+  .nav-toggle:checked ~ nav{
+    display: block;
+  }
+
+  .nav-toggle-label{
+    position: absolute;
+    top: 0;
+    left:0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 2em;
+    position: relative;
+
+  }
+
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+  }
+
+  .nav-toggle-label span::before{
+    bottom:7px;
+  }
+
+  
+  .nav-toggle-label span::after{
+    top:7px;
+  }
+
+  .nav-toggle{ 
+    display: none;
+  }
+
+  @media screen and (min-width:800px){
+    .nav-toggle-label {
         display: none;
     }
-}
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 1fr) 1fr;
+    }
+
+    .logo {
+        grid-column: 2/ span 1;
+    }
+
+    nav {
+        all:unset;
+        grid-column: 3/4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+     nav a {
+        opacity: 1;
+     }
+
+     nav ul {
+        display:flex;
+     }
+
+     nav li {
+        margin-left: 3em;
+        margin-bottom: 0;
+     }
+
+  }
