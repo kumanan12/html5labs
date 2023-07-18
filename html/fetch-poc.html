@@ -10,25 +10,31 @@
     <h1>Ftech POC</h1>
     <div id="posts"></div>
     <script>
-        function getPets(){
+
+        function onJsonDataReceived(data){
             let petContent = '';
-            const fetchPromise = fetch("https://pets-v2.dev-apis.com/pets");
-            fetchPromise.then(response =>{
-               response.json().then(data => {
                 const pets = data.pets;
-                //const pet = data.pets[0];
+               const pet = data.pets[0];
                 pets.forEach(function(pet){
                     petContent += ", " +  pet.name;
                    
                 });
                 console.log(petContent);
                 const element1= document.querySelector("#posts");
-               // element1.innerHTML = `Pet name: ${pet.name}, animal: ${pet.animal}`;
-              //  console.log(data.pets[0]);
-               })
-                // const data = json.pets();
-                // console.log(data);
-            })
+                element1.innerHTML = `Pet name: ${pet.name}, animal: ${pet.animal}`;
+        }
+
+        function onFetchResponse(response){
+            response.json().then(onJsonDataReceived)
+        }
+        
+        function onResponseFailed(err){
+            console.error(`Something happened ${err}`)
+        }
+        function getPets(){
+            let petContent = '';
+            const fetchPromise = fetch("https://pets-v2.dev-apis.com/pets");
+            fetchPromise.then(onFetchResponse)
         }
 
         getPets();

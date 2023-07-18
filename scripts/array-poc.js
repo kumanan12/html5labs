@@ -35,3 +35,6 @@ const sumWithInitial = marks.reduce(
     sum = sum+item;
   });
   console.log(sum);
+
+  x = ""
+ 

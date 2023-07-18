@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Callback POC</h1>
+        <button class="btn btn-secondary mb-3" type="button" onclick="alert('hello')">Show Alert</button>
+        <input id="n1" type="text" class="form-control mb-3" placeholder="number1">
+        <input id="n2" type="text" class="form-control mb-3" placeholder="number2">
+        <button class="btn btn-primary mb-3" onclick="calculateSimpleAdd()" type="button">Calculate Simple Add</button>
+        <button class="btn btn-danger mb-3" onclick="calculateLongAdd()" type="button">Calculate long Add</button>
+
+        <div>
+            <div>
+                the result of simple add is <span id="result1"></span>
+            </div>
+            <div>
+                the result of long add is <span id="result2"></span>
+            </div>
+        </div>
+    </div>
+    <script src=""></script>
+    <script>
+
+        function onScriptLoaded() {
+            
+        }
+        function loadScript(src, callback) {
+            let script = document.createElement('script');
+            script.src = src;
+
+            script.onload = () => callback();
+
+            document.head.append(script);
+        }
+
+        loadScript('/scripts/calculator.js',onScriptLoaded);
+
+        function calculateSimpleAdd() {
+            const number1 = document.getElementById('n1').value;
+            const number2 = document.getElementById('n2').value;
+            const result1 = document.getElementById('result1');
+            const result = add(+number1, +number2);
+            result1.innerHTML = result;
+
+        }
+
+        function calculateLongAdd() {
+            const number1 = document.getElementById('n1').value;
+            const number2 = document.getElementById('n2').value;
+            const result2 = document.getElementById('result2');
+            const result = longAdd(+number1, +number2);
+            result2.innerHTML = result;
+        }
+
+    </script>
+</body>
+
+</html>
