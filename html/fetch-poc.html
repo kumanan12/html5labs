@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Fetch POC</title>
 </head>
 <body>
-    <h1>Ftech POC</h1>
+    <h1>Fetch POC</h1>
     <div id="posts"></div>
     <script>
 
@@ -27,7 +28,7 @@
         function onFetchResponse(response){
             response.json().then(onJsonDataReceived)
         }
-        
+
         function onResponseFailed(err){
             console.error(`Something happened ${err}`)
         }
@@ -37,7 +38,16 @@
             fetchPromise.then(onFetchResponse)
         }
 
-        getPets();
+        //getPets();
+
+        function getPetsUsingAxios(){
+            const axiosPromise = axios.get("https://pets-v2.dev-apis.com/pets");
+            axiosPromise.then(data => {
+                console.log(data);
+            })
+        }
+
+        getPetsUsingAxios();
     </script>
 </body>
 </html>
