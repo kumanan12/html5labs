@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="showStudentForm()">Add</button>
+    <table >
+        <h1>Students</h1>
+        <tbody id="studentsTable">
+
+        </tbody>
+    </table>
+    <form id ='studentForm'>
+        <input type="hidden" id="id">
+        <label >First name
+            <input type="text" id="firstName">
+
+        </label>
+        <label >
+            Last name
+            <input type="text" id="lastName">
+        </label>
+        <button type="button" onclick="addNewStudent()">Submit</button>
+    </form>
+    <script src="/scripts/students-crud.js"></script>
+
+</body>
+</html>

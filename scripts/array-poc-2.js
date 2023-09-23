@@ -1,5 +1,42 @@
 const marks = [85, 92, 93, 91, 95];
 
+function average(marks){
+  let total = 0;
+  for (let i = 0; i < marks.length; i++) {
+    total += marks[i];
+  }
+  return total / marks.length;
+}
+
+const avg = average(marks);
+console.log('average', avg);
+
+function isGreaterThan90(mark){
+  return mark > 90;
+}
+
+function isLessThan90(mark){  
+  return mark < 90;
+}
+
+
+//get the average marks
+ 
+//q: what does solid stands for in solid principles?
+
+
+//q: what is the difference between map and filter?
+
+//q: what is the difference between map and forEach?
+//q: what is the difference between map and reduce?
+//q: what is the difference between map and every?
+//q: what is the difference between map and some?
+//q: what is the difference between map and find?
+//q: what is the difference between map and findIndex?
+//q: what is the difference between map and includes?
+//q: what is the difference between map and indexOf?
+
+
 function isGreaterThan90(mark){
   return mark > 90;
 }

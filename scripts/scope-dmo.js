@@ -15,6 +15,6 @@ function greeting(name) {
 }
 
 
- console.log('current dir ' + __filename);
-// const result = greeting('kumanan');
-// console.log(result);
+//  console.log('current dir ' + __filename);
+const result = greeting('kumanan');
+console.log(result);
