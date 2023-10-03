@@ -110,3 +110,31 @@ const engine = new Engine();
 const car = new Car(engine);
 car.start(); // logs "Engine started." and "Car started."
 ```
+
+## Encapsulation
+> Encapsulation is the practice of hiding the internal details of an object and exposing only what is necessary. This is achieved by using access modifiers such as public, private, and protected. In JavaScript, encapsulation can be achieved using closures or classes.
+>
+```
+function Person(name, age) {
+    let _name = name; // private variable
+    let _age = age; // private variable
+
+    function getAge() { // private method
+        return _age;
+    }
+
+    return {
+        getName() { // public method
+            return _name;
+        },
+
+        introduceSelf() { // public method
+            console.log(`Hi, my name is ${_name} and I am ${getAge()} years old.`);
+        }
+    };
+}
+
+const person = Person('John', 30);
+console.log(person.getName()); // logs "John"
+person.introduceSelf(); // logs "Hi, my name is John and I am 30 years old."
+```
