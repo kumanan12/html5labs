@@ -31,6 +31,8 @@ function onFailure(err){
 
 function domTest(){
     document.getElementById('n1').value="23";
+    document.getElementById('n2').value="25";
+
 }
 domTest();
 let longAddResult= longAdd(2,3);
