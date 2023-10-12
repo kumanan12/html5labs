@@ -3,15 +3,12 @@ function onSuccess(data) {
 }
 
 function onFailure(error) {
-    console.error(error);
+    console.error('Failed ', error);
 }
 
 function add(n1,n2,success, failed) {
-    // if (typeof n1 ==='string') {
-    //     failed("only numeric values")
-    //     return;
-    // }
-    if (typeof n1 ==='string') {
+    let result;
+    if (typeof n1 ==='string' || typeof n2 ==='string') {
         failed("only numeric values")
     }else{
         result = n1+n2;
@@ -21,3 +18,4 @@ function add(n1,n2,success, failed) {
 }
 
 add(2,3,onSuccess,onFailure);
+add('2',3,onSuccess,onFailure);

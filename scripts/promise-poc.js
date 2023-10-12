@@ -35,20 +35,5 @@ function longFunctionUsingPromise(){
   
 }
 
-// const myAsyncFunction = () => {
-//     return new Promise((resolve, reject) => {
-//       setTimeout(() => {
-//         resolve('The operation was successful');
-//       }, 1000);
-//     });
-//   };
-  
-//   myAsyncFunction()
-//     .then(result => {
-//       console.log(result);
-//     })
-//     .catch(error => {
-//       console.error(error);
-//     });
 
 
