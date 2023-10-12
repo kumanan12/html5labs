@@ -26,3 +26,5 @@ function addUsingPromise(n1,n2) {
 let result = addUsingPromise(2,"3");
 result.then(onSuccess, onFailure);
 
+
+
