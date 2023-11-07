@@ -78,3 +78,17 @@ const teaAndCoffee = menu.filter(isTeaOrCofee) //immutability
 
 //string, number, boolean , undefined, null , symbol
 
+const arr = [1, 2, 3, 4, 5];
+const sum = (accumulator, currentValue) => accumulator + currentValue;
+const total = arr.reduce(sum);
+console.log(total); // 15
+
+function factorial(n) {
+  if (n === 0) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+
+console.log(factorial(5)); // Output: 120

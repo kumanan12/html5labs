@@ -1,143 +1,15 @@
- .content {
-    height: 200vh;
-    /* background-image: url(//unsplash.it/1000/1000); */
-    background-color: #333;
-    background-blend-mode: multiply;
-    background-size: cover;
-    display: grid;
-    place-items: center;
-    margin: 0;
-    padding: 0;
-     
-  }
-1. 
-
-  header {
-    background: var(--background);
-    margin:0;
-    padding: 0;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    z-index:999
-
-  }
-
-  2.
-
-  .logo{
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav {
-    position: absolute;
-    text-align: left;
-    top: 100%;
-    left:0;
-    background: var(--background);
-    width: 100%;
-    display: none;
-  }
-
-  nav ul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  nav li {
-    margin-bottom: 1em;
-    margin-left: 1em;
-  }
-
-  nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-  }
-
-  nav a:hover {
-    color: #000;
-  }
-
-  .nav-toggle:checked ~ nav{
-    display: block;
-  }
-
-  .nav-toggle-label{
-    position: absolute;
-    top: 0;
-    left:0;
-    margin-left: 1em;
-    height: 100%;
-    display: flex;
-    align-items: center;
-  }
-
-  .nav-toggle-label span,
-  .nav-toggle-label span::before,
-  .nav-toggle-label span::after {
-    display: block;
-    background: white;
-    height: 2px;
-    width: 2em;
-    position: relative;
-
-  }
-
-  .nav-toggle-label span::before,
-  .nav-toggle-label span::after {
-    content: '';
-    position: absolute;
-  }
-
-  .nav-toggle-label span::before{
-    bottom:7px;
-  }
-
-  
-  .nav-toggle-label span::after{
-    top:7px;
-  }
-
-  .nav-toggle{ 
-    display: none;
-  }
-
-  @media screen and (min-width:800px){
-    .nav-toggle-label {
-        display: none;
+function sumArray(arr, numberOfElements, index,expectedValue , sum) {
+    if (index < arr.length && numberOfElements >=1) {
+        sum += arr[index] ;
+        sumArray(arr, numberOfElements-1, index+1, expectedValue, sum);
+    }else{
+        if (sum == expectedValue) {
+            return sum;
+        }else {
+            sum = 0;
+            numberOfElements =2;
+            sumArray(arr, numberOfElements, index+1, expectedValue, sum);
+        }
     }
-
-    header {
-        display: grid;
-        grid-template-columns: 1fr auto minmax(600px, 1fr) 1fr;
-    }
-
-    .logo {
-        grid-column: 2/ span 1;
-    }
-
-    nav {
-        all:unset;
-        grid-column: 3/4;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-    }
-     nav a {
-        opacity: 1;
-     }
-
-     nav ul {
-        display:flex;
-     }
-
-     nav li {
-        margin-left: 3em;
-        margin-bottom: 0;
-     }
-
-  }
+   
+}
