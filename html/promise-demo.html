@@ -14,25 +14,26 @@
 
 <body>
     <div class="container">
-        <h1>Promise Demo</h1>
+        <h1>Posts</h1>
         <div class="row">
             <form>
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    <label for="postName" class="form-label">Post Name</label>
+                    <input type="email" class="form-control" id="postName" aria-describedby="emailHelp">
+
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <label for="author" class="form-label">Author</label>
+                    <input type="text" class="form-control" id="author">
                 </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <button type="button" onclick="longFunction()" class="btn btn-primary">Submit</button>
-                <button id="submitBtnWithPromise" class="btn btn-secondary" type="button">Submit using promise</button>
+
+                <button type="button" onclick="addPost()" class="btn btn-primary">Submit</button>
+
             </form>
+        </div>
+        <div id="result">
+            <h2>Result</h2>
+
         </div>
 
     </div>
@@ -40,48 +41,54 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
     <script>
-        //     function onSuccess(data){
-        //     console.log('add using promise', data);
-        //    }
-
-        //    function onFailed(err){
-        //     console.log(err);
-        //    }
-
-        //    const result = add(2,3);
-        //    console.log(result);
-
-        //    let resultUsingPromise = addUsingPromise(3,4);
-        //    resultUsingPromise.then((data) =>{
-        //     console.log('using fata arrow result',data);
-        //    }).catch(onFailed)
 
 
-        //    console.log(resultUsingPromise);
+        async function addPost() {
+            const url = "http://localhost:3000/posts";
+            const postName = document.getElementById('postName').value;
+            const author = document.getElementById('author').value;
+            const data = { postName, author };
+            const response = await fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
 
-        //     async function getLongResult(){
-        //         longFunctionUsingPromise().then(data => {
-        //             console.log(data);
-        //         })
-        //         return "long result";
-        //     }
-
-        //     const btn = document.getElementById("submitBtnWithPromise");
-        //     btn.onclick= getLongResult;
+        }
 
         async function getData() {
+            //https://dog.ceo/api/breeds/list/all
             const url = 'https://pets-v2.dev-apis.com/breeds?animal=dog';
             let response = await fetch(url);
             let json = await response.json();
-            console.log('inside', json)
+            console.log('inside', json.animal)
+            const resultElement = document.getElementById('result');
+            resultElement.innerHTML = `The value is ${json.animal}`;
+            //resultElement.innerHTML = ;
             return json;
 
         }
 
-        let result =getData();
-        result.then(data => {
-            console.log(data);
-        })
+        async function sayHi() {
+            return "hello";
+        }
+
+        let greeting =  sayHi();
+
+
+         //console.log(greeting);
+        greeting.then(data => console.log(data))
+        console.log("jkljkk");
+
+        // let result = getData();
+        // console.log('test');
+
+        // let result =getData();
+        // result.then(data => {
+        //     console.log(data);
+        // })
 
     </script>
 </body>

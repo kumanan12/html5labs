@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>side nav</title>
+    <style>
+        .sidebar {
+            width: 100px;
+            position: fixed;
+            height: 100%;
+            background-color: #f8f9fa;
+            padding: 10px;
+        }
+
+        li {
+            list-style: none;
+            padding: 10px;
+            position: relative;
+        }
+
+        li a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        li ul {
+            display: none;
+        }
+
+        li:hover ul {
+            display: block;
+        }
+
+        
+
+        li ul {
+            position: absolute;
+            left: 120%;
+            top: 0;
+            display: none;
+            background-color: #f8f9fa;
+            padding: 10px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            opacity: 1;
+            /* border: 1px solid #ccc; */
+            border-radius: 5px;
+            min-width: 200px;
+
+        }
+
+        li:hover ul {
+            display: block;
+            transition: opacity 0.3s ease;
+        }
+
+        li ul::before {
+            content: "";
+            position: absolute;
+            top: 15px;
+            left: -10px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent #000 transparent transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+
+                </li>
+                <li><a href="#">About</a></li>
+                <li>
+                    <a href="#">Services</a>
+                    <ul>
+                        <li><a href="#">Consulting</a></li>
+                        <li><a href="#">Tech Support</a></li>
+                        <li><a href="#">Designing</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>
